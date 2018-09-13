@@ -1,0 +1,274 @@
+*{
+	padding: 0;
+	margin: 0;
+	list-style:none;
+}
+body{
+	background-color: #ccc;
+}
+header{
+	width: auto;
+	height: 88px;
+	background: #52affe;
+	font-size: 36px;
+	text-align: center;
+	line-height: 0.88rem;
+	color: #fff;
+	position: relative;
+}
+header .audioBtn{
+	width: 0.88rem;
+	height: 0.88rem;
+	background-color: red;
+	position: absolute;
+	top: 0;
+	right: 0.23rem;
+}
+header .screen{
+	width: auto;
+	height: 8.2rem;
+	background-color:#52affe;
+	/*渐变*/
+	background-image: linear-gradient(#52afe9,#70d3f6);
+	position: relative;
+	color: #fff;
+	text-align: center;
+	overflow: hidden;
+}
+.screen::after{
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-image: url("img/screen.png"),url("img/wind.png"),url("img/writer.png");
+
+	background-size: contain;
+	background-position: bottom,0 3rem;
+	background-repeat: no-repeat;
+}
+.screen .aqi{
+	width: 0.76rem;
+	height:0.88rem;
+	background-color: #f0cc35;
+	border-radius: 0.1rem;
+	position: absolute;
+	top:0.24rem ;
+	left:0.24rem;
+	font-size: 0.3rem;
+	color: #fff;
+	text-align: center;	
+	line-height: 0.48rem;
+	font-size: 0.3rem;
+}
+.screen h3{
+	margin-top:1.5rem;
+	font-size: 1rem;
+	position: relative;
+}
+.screen h3::after{
+	content: "°";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: 0.7rem;
+}
+.screen h4{
+	/*margin-top: */
+	font-size: 0.5rem;
+}
+.screen h5{
+	font-size: 0.3rem;
+}
+
+/*头部完*/
+
+/*天数开始*/
+.day{
+	margin-top: 8.2rem;
+	width:auto;
+	height:2rem;
+	background-color: #fff; 
+	display: flex;
+	align-items: center;
+}
+.day>div{
+	width: 50%;
+	height: 1.04rem;
+	background-color: #fff;
+	font-size: 0.24rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.day>div span{
+	padding:0.05rem 0.5rem;
+
+}
+.day>div span{	
+	width: 1.2rem;
+}
+/*小时开始*/
+.hours{
+	width: 100%;
+	height: 2.9rem;
+	background-color: #fff;
+	margin-top: 0.2rem;
+	overflow-x: auto;
+	overflow-y: hidden;
+	padding: 0.11rem;
+}
+.hours::-webkit-scrollbar{
+	display: none;
+}
+.hours .con{
+	width:auto; 
+	height:2.9rem;
+	display: flex;
+}
+.hours .con .box{
+	width:1.14rem; 
+	height:1.6rem;
+	margin-top: 0.6rem;
+	margin-left: 0.3rem;
+	font-size: 0.24rem;
+	text-align: center;
+}
+
+.hours .con .box img{
+	width: 0.48rem;
+	height:0.48rem;
+	margin: 0.2rem;
+}
+/*一周开始*/
+.week{
+	width: 100%;
+	height: 8.7rem;
+	background-color: #FFF;
+	margin-top: 0.2rem;
+	overflow-x: auto;
+	overflow-y: hidden;
+	padding: 0.11rem;
+	position: relative;
+}
+.week::-webkit-scrollbar{
+	display: none;
+}
+.week .conn{
+	width:270%; 
+	height:2.4rem;
+	display: flex;
+}
+.week .conn .boxx{
+	width:1.14rem; 
+	height:1.4rem;
+	margin-top: 0.1rem;
+	margin-left: 0.6rem;
+	font-size: 0.24rem;
+	text-align: center;
+}
+.week .conn .boxx>div{
+	margin: 0.00rem;
+}
+.week .conn .boxx img{
+	width: 0.48rem;
+	height:0.48rem;
+	margin-top: 0.1rem;
+}
+
+.week .cent{
+	position: absolute;
+	/*top: 300px;
+	left: 0;*/
+	width: 100%;
+	height: 3.5rem;
+	/*background-color: red;*/
+}
+
+.week .xian{
+	width:auto; 
+	height:2.9rem;
+	display: flex;
+	position: absolute;
+	top: 5.7rem;
+	left: 0;
+}
+.week .xian .boxx{
+	width:1.14rem; 
+	height:1.6rem;
+	margin-top: 0.4rem;
+	margin-left: 0.5rem;
+	font-size: 0.24rem;
+	text-align: center;
+}
+.week .xian .boxx>div{
+	margin: 0.00rem;
+}
+.week .xian .boxx img{
+	width: 0.48rem;
+	height:0.48rem;
+	margin: 0.1rem;
+}
+/*弹窗*/
+.cityBox{
+	width: 100%;
+	height: 0;
+	position: fixed;
+	top:0;
+	left: 0;
+	background-color: #fff;
+	overflow:auto;
+	display: none;
+}
+.cityBox .scrrn{
+	width: auto;
+	height: 2rem;
+	border-bottom: 1px solid #78a2e5;
+}
+.cityBox .scrrn input{
+	width: 50%;
+	height: 1rem;
+	align-items: center;
+	margin-left: 1.2rem;
+	border-radius: 10px;
+	font-size: 0.3rem;
+	color:#848588;
+	background-color: #fff;
+	border:1px solid#333;
+}
+.cityBox .scrrn button{
+	width: 10%;
+	height: 0.6rem;
+	background-color: #fff;
+	border:1px solid#333;
+	align-items: center;
+	margin-left: 1.2rem;
+	border-radius: 10px;
+	font-size: 0.3rem;
+	color:#848588;
+}
+.cityBox .shenghui{
+	width: 100%;
+	height: 1rem;
+	font-size: 0.6rem;
+	margin:20px 0px 0px 30px;
+}
+.cityBox .xd .city{
+	width: auto;
+	height: 100%;
+	margin: 10px 10px;
+	display: flex;
+	flex-wrap: wrap;
+}
+.cityBox .xd .city .con{
+	width: 30%;
+	height: 0.6rem;
+	background-color: #5f99f6;
+	margin: 15px;
+	border-radius: 5px;
+	float: left;
+	font-size: 0.24rem;
+	text-align: center;
+	line-height: 0.6rem;
+}
